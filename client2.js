@@ -37,7 +37,7 @@ var mesh;
 
 // Load GLTF model, add material, and add it to the scene
 const loader = new GLTFLoader().load(
-  "./assets/testing123fogv3.glb", // comment this line out and un comment the line below to swithc models
+  "./assets/room.glb", // comment this line out and un comment the line below to swithc models
   //"./assets/gourd_web.glb", //<-- photogrammetery model
   function(gltf) {
     // Scan loaded model for mesh and apply defined material if mesh is present
@@ -62,8 +62,8 @@ const loader = new GLTFLoader().load(
 
 // Add Orbit Controls
 const controls = new OrbitControls(camera, renderer.domElement);
-controls.minDistance = 3;
-controls.maxDistance = 6;
+controls.minDistance = 10;
+controls.maxDistance = 50;
 controls.target.set(0, 0, -0.2);
 controls.update();
 

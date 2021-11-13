@@ -52,7 +52,7 @@ function init() {
 
   // Load GLTF model, add material, and add it to the scene
   const loader = new GLTFLoader().load(
-    "./assets/testing123fogv3.glb",
+    "./assets/room.glb",
     function(gltf) {
       // Scan loaded model for mesh and apply defined material if mesh is present
       gltf.scene.traverse(function(child) {
