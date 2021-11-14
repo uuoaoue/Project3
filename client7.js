@@ -247,6 +247,19 @@ function init() {
   // Place plane geometry
   scene.add( plane5 );
 
+     // Sixth Image (Text with image and white background)
+  // Load image as texture
+  const texture6 = new THREE.TextureLoader().load( './assets/image_6.jpg' );
+  // immediately use the texture for material creation
+  const material6 =new THREE.MeshBasicMaterial( {map: texture6} );
+  // Create plane geometry
+  const geometry6 = new THREE.SphereGeometry( 15, 32, 16 );
+  // Apply image texture to plane geometry
+  const plane6 = new THREE.Mesh( geometry6, material6 );
+  // Position plane geometry
+  plane6.position.set(-100 , 20 , -100);
+  // Place plane geometry
+  scene.add( plane6 );
 
   // Define Rendered and html document placement
   renderer = new THREE.WebGLRenderer({
