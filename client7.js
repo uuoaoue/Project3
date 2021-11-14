@@ -239,11 +239,11 @@ function init() {
   // immediately use the texture for material creation
   const material5 =new THREE.MeshBasicMaterial( {map: texture5} );
   // Create plane geometry
-  const geometry5 = new THREE.SphereGeometry( 5, 32, 16 );
+  const geometry5 = new THREE.SphereGeometry( 15, 32, 16 );
   // Apply image texture to plane geometry
   const plane5 = new THREE.Mesh( geometry5, material5 );
   // Position plane geometry
-  plane5.position.set(-50 , 10 , -50);
+  plane5.position.set(-100 , 20 , -100);
   // Place plane geometry
   scene.add( plane5 );
 
