@@ -9,6 +9,9 @@ import * as THREE from "./build/three.module.js";
 import {
   PointerLockControls
 } from "./src/PointerLockControls.js";
+// Import add-ons for GLTF models and orbit controls
+import { OrbitControls } from "./src/OrbitControls.js";
+import { GLTFLoader } from "./src/GLTFLoader.js";
 
 // Establish variables
 let camera, scene, renderer, controls, material;
@@ -45,8 +48,9 @@ function init() {
 
   // Define basic scene parameters
   scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x000000);
-  scene.fog = new THREE.Fog(0xffffff, 0, 750);
+  scene.background = new THREE.Color("rgb(26, 17, 77)");
+
+  scene.fog = new THREE.Fog(0x7985ba, 0, 200);
 
   // Define scene lighting
   const light = new THREE.HemisphereLight(0xeeeeff, 0x777788, 0.75);
@@ -166,7 +170,8 @@ function init() {
   const colorsFloor = [];
 
   for (let i = 0, l = position.count; i < l; i++) {
-    color.setHSL(Math.random() * 0.3 + 0.5, 0.75, Math.random() * 0.25 + 0.75);
+    // color.setHSL(Math.random() * 0.3 + 0.5, 0.75, Math.random() * 0.15 + 0.75);
+    color.setRGB(Math.random() * 0.6+ 0.5, 0.3, Math.random() * 0.25 + 0.75);
     colorsFloor.push(color.r, color.g, color.b);
   }
 
@@ -187,31 +192,61 @@ function init() {
 
   // First Image (red and purple glitch map)
   // Load image as texture
-  const texture = new THREE.TextureLoader().load( './assets/glitch_map.jpg' );
+  const texture = new THREE.TextureLoader().load( './assets/image_4.jpg' );
   // Immediately use the texture for material creation
-  const material = new THREE.MeshBasicMaterial( { map: texture, side: THREE.DoubleSide } );
+  const material = new THREE.MeshBasicMaterial( { map: texture } );
   // Create plane geometry
-  const geometry = new THREE.PlaneGeometry( 32, 16 );
+  const geometry = new THREE.BoxGeometry( 10, 10, 10 );
   // Apply image texture to plane geometry
   const plane = new THREE.Mesh( geometry, material );
   // Position plane geometry
-  plane.position.set(0 , 15 , -15);
+  plane.position.set(-10 ,10 ,-50);
   // Place plane geometry
   scene.add( plane );
 
   // Second Image (Text with image and white background)
   // Load image as texture
-  const texture2 = new THREE.TextureLoader().load( './assets/bouy.jpg' );
+  const texture2 = new THREE.TextureLoader().load( './assets/image_2.jpg' );
   // immediately use the texture for material creation
-  const material2 = new THREE.MeshBasicMaterial( { map: texture2, side: THREE.DoubleSide } );
+  const material2 = new THREE.MeshBasicMaterial( { map: texture2 } );
   // Create plane geometry
-  const geometry2 = new THREE.PlaneGeometry( 200, 100 );
+  const geometry2 = new THREE.BoxGeometry( 10, 10, 10 );
   // Apply image texture to plane geometry
   const plane2 = new THREE.Mesh( geometry2, material2 );
   // Position plane geometry
-  plane2.position.set(0 , 100 , -200);
+  plane2.position.set(10 , 10 , -50);
   // Place plane geometry
   scene.add( plane2 );
+
+   // Third Image (Text with image and white background)
+  // Load image as texture
+  const texture3 = new THREE.TextureLoader().load( './assets/image_3.jpg' );
+  // immediately use the texture for material creation
+  const material3 =new THREE.MeshBasicMaterial( {map: texture3} );
+  // Create plane geometry
+  const geometry3 =new THREE.BoxGeometry( 10, 10, 10 );
+  // Apply image texture to plane geometry
+  const plane3 = new THREE.Mesh( geometry3, material3 );
+  // Position plane geometry
+  plane3.position.set(-30 , 10 , -50);
+  // Place plane geometry
+  scene.add( plane3 );
+
+
+   // Fifth Image (Text with image and white background)
+  // Load image as texture
+  const texture5 = new THREE.TextureLoader().load( './assets/image_5.jpg' );
+  // immediately use the texture for material creation
+  const material5 =new THREE.MeshBasicMaterial( {map: texture5} );
+  // Create plane geometry
+  const geometry5 = new THREE.SphereGeometry( 5, 32, 16 );
+  // Apply image texture to plane geometry
+  const plane5 = new THREE.Mesh( geometry5, material5 );
+  // Position plane geometry
+  plane5.position.set(-50 , 10 , -50);
+  // Place plane geometry
+  scene.add( plane5 );
+
 
   // Define Rendered and html document placement
   renderer = new THREE.WebGLRenderer({
