@@ -18,7 +18,7 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
   50,
   window.innerWidth / window.innerHeight,
-  0.1,
+  0.01,
   1000
 );
 const renderer = new THREE.WebGLRenderer();
@@ -37,7 +37,7 @@ var mesh;
 
 // Load GLTF model, add material, and add it to the scene
 const loader = new GLTFLoader().load(
-  "./assets/room.glb", // comment this line out and un comment the line below to swithc models
+  "./assets/AMONGUS.glb", // comment this line out and un comment the line below to swithc models
   //"./assets/gourd_web.glb", //<-- photogrammetery model
   function(gltf) {
     // Scan loaded model for mesh and apply defined material if mesh is present
@@ -48,9 +48,9 @@ const loader = new GLTFLoader().load(
     });
     // set position and scale
     mesh = gltf.scene;
-    mesh.position.set(0, 0, 0);
-    mesh.rotation.set(45, 0, 0);
-    mesh.scale.set(.2, .2, .2); // <-- change this to (1, 1, 1) for photogrammetery model
+    mesh.position.set(10, 10, 10);
+    mesh.rotation.set(0, 0, 0);
+    mesh.scale.set(3, 3, 3); // <-- change this to (1, 1, 1) for photogrammetery model
     // Add model to scene
     scene.add(mesh);
   },
@@ -62,8 +62,8 @@ const loader = new GLTFLoader().load(
 
 // Add Orbit Controls
 const controls = new OrbitControls(camera, renderer.domElement);
-controls.minDistance = 10;
-controls.maxDistance = 50;
+controls.minDistance = 5;
+controls.maxDistance = 10;
 controls.target.set(0, 0, -0.2);
 controls.update();
 

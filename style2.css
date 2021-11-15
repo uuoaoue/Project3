@@ -1,15 +1,16 @@
 /* Style sheet from index.html and gtlf.html
 This is used because of the differences needed for the full screen style.*/
 
-@import url("https://fonts.google.com/specimen/Press+Start+2P#standard-styles");
+@import url("https://fonts.googleapis.com/css?family=Audiowide");
 html,
 body {
-  font-family: "Press Start 2P", monospace;
+  font-family: "Audiowide", 'Courier New', Courier, monospace;
   margin: auto;
 }
 
 h1 {
   font-style: bold;
+font-size: 50px;
   color: #0742e2;
   text-align: center;
   padding-top: 200px;
@@ -35,7 +36,7 @@ p.move-mid {
   padding-left: 0%;
   text-align: center;
   margin: auto;
-  color: #b37fd6;
+  color: #461b63;
 }
 
 a {
