@@ -48,7 +48,7 @@ function init() {
 
   // Define basic scene parameters
   scene = new THREE.Scene();
-  scene.background = new THREE.Color("rgb(26, 17, 77)");
+  scene.background = new THREE.Color("rgb(2, 28, 82)");
 
   scene.fog = new THREE.Fog(0x7985ba, 0, 200);
 
@@ -170,8 +170,7 @@ function init() {
   const colorsFloor = [];
 
   for (let i = 0, l = position.count; i < l; i++) {
-    // color.setHSL(Math.random() * 0.3 + 0.5, 0.75, Math.random() * 0.15 + 0.75);
-    color.setRGB(Math.random() * 0.6+ 0.5, 0.3, Math.random() * 0.25 + 0.75);
+    color.setRGB(Math.random() * 0.1+ 0.1, Math.random() * 0.3 + 0.1, Math.random() * 0.1 + 0.4);
     colorsFloor.push(color.r, color.g, color.b);
   }
 
@@ -425,4 +424,5 @@ function animate() {
 
   renderer.render(scene, camera);
 }
+
 
