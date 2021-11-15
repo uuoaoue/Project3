@@ -230,13 +230,13 @@ function init() {
   // Place plane geometry
   scene.add( plane3 );
 
-  // Load GLTF model, add material, and add it to the scene
+  // Load GLTF AMONGUS
   const loader = new GLTFLoader().load(
     "./assets/AMONGUS.glb", // comment this line out and un comment the line below to swithc models
     function(gltf) {    
       // set position and scale
       among_us = gltf.scene;
-      among_us.position.set(-50 , 10 , -50);
+      among_us.position.set(30 , 5 , -70);
       among_us.rotation.set(0, 0, 0);
       among_us.scale.set(3, 3, 3); // <-- change this to (1, 1, 1) for photogrammetery model
       // Add model to scene
