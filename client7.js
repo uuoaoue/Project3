@@ -57,9 +57,10 @@ function init() {
   scene.fog = new THREE.Fog(0x7985ba, 0, 200);
 
   // Define scene lighting
-  const light = new THREE.HemisphereLight(0xeeeeff, 0x777788, 0.75);
-  light.position.set(0.5, 1, 0.75);
+  const light = new THREE.HemisphereLight(0xffffff, 5, 2  );
+
   scene.add(light);
+
 
   // Define controls
   controls = new PointerLockControls(camera, document.body);
@@ -161,9 +162,9 @@ function init() {
   for (let i = 0, l = position.count; i < l; i++) {
     vertex.fromBufferAttribute(position, i);
 
-    vertex.x += Math.random() * 20 - 10;
+    vertex.x += Math.random() * 25 - 20;
     vertex.y += Math.random() * 2;
-    vertex.z += Math.random() * 20 - 10;
+    // vertex.z += Math.random() * 30 - 10;
 
     position.setXYZ(i, vertex.x, vertex.y, vertex.z);
   }
