@@ -13,7 +13,7 @@ import { GLTFLoader } from "./src/GLTFLoader.js";
 
 // Establish variables
 let camera, scene, renderer, controls, material;
-let among_us, mesh4, mesh5, mesh6, teapot;
+let among_us, mesh4, mesh5, mesh6, teapot,girl;
 const objects = [];
 let raycaster;
 
@@ -191,45 +191,147 @@ function init() {
 
   // First Image (red and purple glitch map)
   // Load image as texture
-  const texture = new THREE.TextureLoader().load( './assets/image_1.jpg' );
+  const texture = new THREE.TextureLoader().load( './assets/Sin1.jpg' );
   // Immediately use the texture for material creation
   const material = new THREE.MeshBasicMaterial( { map: texture } );
   // Create plane geometry
-  const geometry = new THREE.BoxGeometry( 10, 10, 10 );
+  const geometry = new THREE.BoxGeometry( 15, 20, .5 );
   // Apply image texture to plane geometry
   const plane = new THREE.Mesh( geometry, material );
   // Position plane geometry
-  plane.position.set(-10 ,10 ,-50);
+  plane.position.set(-50 ,12 ,-200);
   // Place plane geometry
   scene.add( plane );
 
   // Second Image (Text with image and white background)
   // Load image as texture
-  const texture2 = new THREE.TextureLoader().load( './assets/image_2.jpg' );
+  const texture2 = new THREE.TextureLoader().load( './assets/Sin2.jpg' );
   // immediately use the texture for material creation
   const material2 = new THREE.MeshBasicMaterial( { map: texture2 } );
   // Create plane geometry
-  const geometry2 = new THREE.BoxGeometry( 10, 10, 10 );
+  const geometry2 = new THREE.BoxGeometry( 15, 20, .5 );
   // Apply image texture to plane geometry
   const plane2 = new THREE.Mesh( geometry2, material2 );
   // Position plane geometry
-  plane2.position.set(10 , 10 , -50);
+  plane2.position.set(-30 , 12 , -200);
   // Place plane geometry
   scene.add( plane2 );
 
    // Third Image (Text with image and white background)
   // Load image as texture
-  const texture3 = new THREE.TextureLoader().load( './assets/image_3.jpg' );
+  const texture3 = new THREE.TextureLoader().load( './assets/Sin3.jpg' );
   // immediately use the texture for material creation
   const material3 =new THREE.MeshBasicMaterial( {map: texture3} );
   // Create plane geometry
-  const geometry3 =new THREE.BoxGeometry( 10, 10, 10 );
+  const geometry3 =new THREE.BoxGeometry( 15, 20, 0.5 );
   // Apply image texture to plane geometry
   const plane3 = new THREE.Mesh( geometry3, material3 );
   // Position plane geometry
-  plane3.position.set(-30 , 10 , -50);
+  plane3.position.set(-10 , 12 , -200);
   // Place plane geometry
   scene.add( plane3 );
+
+     // sin 4 Image (Text with image and white background)
+  // Load image as texture
+  const texture7 = new THREE.TextureLoader().load( './assets/Sin4.jpg' );
+  // immediately use the texture for material creation
+  const material7 =new THREE.MeshBasicMaterial( {map: texture7} );
+  // Create plane geometry
+  const geometry7 =new THREE.BoxGeometry( 15, 20, 0.5 );
+  // Apply image texture to plane geometry
+  const plane7= new THREE.Mesh( geometry7, material7 );
+  // Position plane geometry
+  plane7.position.set(10 , 12 , -200);
+  // Place plane geometry
+  scene.add( plane7 ); 
+
+
+       // sin 5 Image (Text with image and white background)
+  // Load image as texture
+  const texture8 = new THREE.TextureLoader().load( './assets/Sin5.jpg' );
+  // immediately use the texture for material creation
+  const material8 =new THREE.MeshBasicMaterial( {map: texture8} );
+  // Create plane geometry
+  const geometry8 =new THREE.BoxGeometry( 15, 20, 0.5 );
+  // Apply image texture to plane geometry
+  const plane8= new THREE.Mesh( geometry8, material8);
+  // Position plane geometry
+  plane8.position.set(30 , 12 , -200);
+  // Place plane geometry
+  scene.add( plane8 ); 
+
+
+       // sin 6 Image (Text with image and white background)
+  // Load image as texture
+  const texture9 = new THREE.TextureLoader().load( './assets/Sin6.jpg' );
+  // immediately use the texture for material creation
+  const material9 =new THREE.MeshBasicMaterial( {map: texture9} );
+  // Create plane geometry
+  const geometry9 =new THREE.BoxGeometry( 15, 20, 0.5 );
+  // Apply image texture to plane geometry
+  const plane9= new THREE.Mesh( geometry9, material9);
+  // Position plane geometry
+  plane9.position.set(50 , 12 , -200);
+  // Place plane geometry
+  scene.add( plane9 ); 
+
+
+
+       // sin 7 Image (Text with image and white background)
+  // Load image as texture
+  const texture10= new THREE.TextureLoader().load( './assets/Sin7.jpg' );
+  // immediately use the texture for material creation
+  const material10 =new THREE.MeshBasicMaterial( {map: texture10} );
+  // Create plane geometry
+  const geometry10 =new THREE.BoxGeometry( 15, 20, 0.5 );
+  // Apply image texture to plane geometry
+  const plane10= new THREE.Mesh( geometry10, material10);
+  // Position plane geometry
+  plane10.position.set(70 , 12 , -200);
+  // Place plane geometry
+  scene.add( plane10 ); 
+
+         //title 3d models(Text with image and white background)
+  // Load image as texture
+  const texture11= new THREE.TextureLoader().load( './assets/title3.png' );
+  // immediately use the texture for material creation
+  const material11 =new THREE.MeshBasicMaterial( {map: texture11} );
+  // Create plane geometry
+  const geometry11=new THREE.BoxGeometry( 15, 15, .5 );
+  // Apply image texture to plane geometry
+  const plane11=  new THREE.Mesh( geometry11, material11);
+  // Position plane geometry
+  plane11.position.set(90 , 10 , -50);
+  // Place plane geometry
+  scene.add( plane11 ); 
+
+      //title organic shapes (Text with image and white background)
+  // Load image as texture
+  const texture12= new THREE.TextureLoader().load( './assets/title1.png' );
+  // immediately use the texture for material creation
+  const material12 =new THREE.MeshBasicMaterial( {map: texture12} );
+  // Create plane geometry
+  const geometry12=new THREE.BoxGeometry( 20, 20, .5 );
+  // Apply image texture to plane geometry
+  const plane12=  new THREE.Mesh( geometry12, material12);
+  // Position plane geometry
+  plane12.position.set(-130 , 10 , -50);
+  // Place plane geometry
+  scene.add( plane12); 
+
+     //title 7 sins (Text with image and white background)
+  // Load image as texture
+  const texture13= new THREE.TextureLoader().load( './assets/title2.png' );
+  // immediately use the texture for material creation
+  const material13 =new THREE.MeshBasicMaterial( {map: texture13} );
+  // Create plane geometry
+  const geometry13=new THREE.BoxGeometry( 40, 20, .5 );
+  // Apply image texture to plane geometry
+  const plane13=  new THREE.Mesh( geometry13, material13);
+  // Position plane geometry
+  plane13.position.set(10 , 40 , -200);
+  // Place plane geometry
+  scene.add( plane13); 
 
   // Load GLTF AMONGUS
   const loader = new GLTFLoader().load(
@@ -237,7 +339,7 @@ function init() {
     function(gltf) {    
       // set position and scale
       among_us = gltf.scene;
-      among_us.position.set(30 , 5 , -70);
+      among_us.position.set(90 , 2 , -70);
       among_us.rotation.set(0, 0, 0);
       among_us.scale.set(3, 3, 3); // <-- change this to (1, 1, 1) for photogrammetery model
       // Add model to scene
@@ -255,11 +357,30 @@ function init() {
     function(gltf) {    
       // set position and scale
       teapot = gltf.scene;
-     teapot.position.set(30 , 5 , -100);
+     teapot.position.set(90 , 2 , -100);
       teapot.rotation.set(0, 0, 0);
       teapot.scale.set(0.15, 0.15,0.15); // <-- change this to (1, 1, 1) for photogrammetery model
       // Add model to scene
       scene.add(teapot);
+    },
+    undefined,
+    function(error) {
+      console.error(error);
+    }
+  );
+
+
+   // Load GLTF GIRL
+   const loader2= new GLTFLoader().load(
+    "./assets/girl.glb", // comment this line out and un comment the line below to swithc models
+    function(gltf) {    
+      // set position and scale
+      girl = gltf.scene;
+     girl.position.set(90 , 2 , -150);
+      girl.rotation.set(0, 0, 0);
+      girl.scale.set(5, 5,5); // <-- change this to (1, 1, 1) for photogrammetery model
+      // Add model to scene
+      scene.add(girl);
     },
     undefined,
     function(error) {
