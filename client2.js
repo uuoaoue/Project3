@@ -60,6 +60,11 @@ const loader = new GLTFLoader().load(
   }
 );
 
+
+
+
+
+
 // Add Orbit Controls
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.minDistance = 5;

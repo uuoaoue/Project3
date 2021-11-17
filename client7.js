@@ -29,6 +29,10 @@ const direction = new THREE.Vector3();
 const vertex = new THREE.Vector3();
 const color = new THREE.Color();
 
+
+
+
+
 // Initialization and animation function calls
 init();
 animate();
@@ -187,9 +191,35 @@ function init() {
 
   // Insert completed floor into the scene
   scene.add(floor);
+//  insert "welcome"
+  var loader4 = new THREE.FontLoader();
 
-
-  // First Image (red and purple glitch map)
+  loader4.load( './assets/Schoolbell_Regular.json', function ( font ) {
+  
+      var textGeo = new THREE.TextGeometry( "Welcome", {
+  
+          font: font,
+  
+          size: 10,
+          height: 2,
+          curveSegments: 2,
+  
+          bevelThickness: .5,
+          bevelSize: .5,
+          bevelEnabled: true
+  
+      } );
+  
+      var textMaterial = new THREE.MeshPhongMaterial( { color: "#4070ff" } );
+  
+      var word = new THREE.Mesh( textGeo, textMaterial );
+      word.position.set( -25,8,-30);
+  
+      scene.add( word );
+  
+  } );
+  
+  // First Image
   // Load image as texture
   const texture = new THREE.TextureLoader().load( './assets/Sin1.jpg' );
   // Immediately use the texture for material creation
@@ -203,7 +233,7 @@ function init() {
   // Place plane geometry
   scene.add( plane );
 
-  // Second Image (Text with image and white background)
+  // Second Image
   // Load image as texture
   const texture2 = new THREE.TextureLoader().load( './assets/Sin2.jpg' );
   // immediately use the texture for material creation
@@ -217,7 +247,7 @@ function init() {
   // Place plane geometry
   scene.add( plane2 );
 
-   // Third Image (Text with image and white background)
+   // Third Image
   // Load image as texture
   const texture3 = new THREE.TextureLoader().load( './assets/Sin3.jpg' );
   // immediately use the texture for material creation
@@ -231,7 +261,7 @@ function init() {
   // Place plane geometry
   scene.add( plane3 );
 
-     // sin 4 Image (Text with image and white background)
+     // sin 4 Image 
   // Load image as texture
   const texture7 = new THREE.TextureLoader().load( './assets/Sin4.jpg' );
   // immediately use the texture for material creation
@@ -246,7 +276,7 @@ function init() {
   scene.add( plane7 ); 
 
 
-       // sin 5 Image (Text with image and white background)
+       // sin 5 Image 
   // Load image as texture
   const texture8 = new THREE.TextureLoader().load( './assets/Sin5.jpg' );
   // immediately use the texture for material creation
@@ -261,7 +291,7 @@ function init() {
   scene.add( plane8 ); 
 
 
-       // sin 6 Image (Text with image and white background)
+       // sin 6 Image
   // Load image as texture
   const texture9 = new THREE.TextureLoader().load( './assets/Sin6.jpg' );
   // immediately use the texture for material creation
@@ -277,7 +307,7 @@ function init() {
 
 
 
-       // sin 7 Image (Text with image and white background)
+       // sin 7 Image
   // Load image as texture
   const texture10= new THREE.TextureLoader().load( './assets/Sin7.jpg' );
   // immediately use the texture for material creation
@@ -291,7 +321,7 @@ function init() {
   // Place plane geometry
   scene.add( plane10 ); 
 
-         //title 3d models(Text with image and white background)
+         //title 3d models
   // Load image as texture
   const texture11= new THREE.TextureLoader().load( './assets/title3.png' );
   // immediately use the texture for material creation
@@ -305,13 +335,13 @@ function init() {
   // Place plane geometry
   scene.add( plane11 ); 
 
-      //title organic shapes (Text with image and white background)
+      //title organic shapes 
   // Load image as texture
   const texture12= new THREE.TextureLoader().load( './assets/title1.png' );
   // immediately use the texture for material creation
   const material12 =new THREE.MeshBasicMaterial( {map: texture12} );
   // Create plane geometry
-  const geometry12=new THREE.BoxGeometry( 20, 10, .5 );
+  const geometry12=new THREE.BoxGeometry( 20, 20, .5 );
   // Apply image texture to plane geometry
   const plane12=  new THREE.Mesh( geometry12, material12);
   // Position plane geometry
@@ -319,7 +349,7 @@ function init() {
   // Place plane geometry
   scene.add( plane12); 
 
-     //title 7 sins (Text with image and white background)
+     //title 7 sins 
   // Load image as texture
   const texture13= new THREE.TextureLoader().load( './assets/title2.png' );
   // immediately use the texture for material creation
@@ -527,5 +557,3 @@ function animate() {
 
   renderer.render(scene, camera);
 }
-
-
